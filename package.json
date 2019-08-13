@@ -1,0 +1,40 @@
+{
+  "name": "segmentacion-sanitaria",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "nodemon": "nodemon --watch .env --watch app.js --watch routes --watch models --watch middleware --watch config --watch bin ./bin/www",
+    "start": "node ./bin/www",
+    "test": "mocha --timeout 10000",
+    "lint": "eslint app.js routes/**/*.js models/*.js routes/*.js",
+    "pm2:install": "npm install pm2@latest -g",
+    "pm2:prod": "pm2 start ecosystem.config.js --env production",
+    "pm2:dev": "pm2 start ecosystem.config.js --env development",
+    "pm2:reload": "pm2 restart all",
+    "pm2:stop": "pm2 stop all",
+    "pm2:kill": "pm2 kill",
+    "pm2:monitor": "pm2 monit"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.2.2",
+    "cookie-parser": "^1.4.4",
+    "debug": "^4.1.1",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.6.9",
+    "morgan": "^1.9.1",
+    "pug": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^6.1.0",
+    "mocha": "^6.2.0",
+    "nodemon": "^1.19.1",
+    "serve-favicon": "^2.5.0",
+    "swagger-jsdoc": "^3.4.0"
+  }
+}
